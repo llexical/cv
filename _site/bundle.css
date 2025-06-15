@@ -1,0 +1,187 @@
+@font-face {
+  font-family: 'Monaspace Argon';
+  src: url('fonts/MonaspaceArgonVarVF[wght,wdth,slnt].woff2') format('woff2'),
+       url('fonts/MonaspaceArgonVarVF[wght,wdth,slnt].woff') format('woff');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: url('fonts/MonaspaceNeonVarVF[wght,wdth,slnt].woff2') format('woff2'),
+       url('fonts/MonaspaceNeonVarVF[wght,wdth,slnt].woff') format('woff');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+
+:root {
+  --color-black: hsl(0, 0%, 18%);
+  --color-red: hsl(5, 49%, 41%);
+  --color-green: hsl(98, 43%, 38%);
+  --color-yellow: hsl(40, 60%, 47%);
+  --color-blue: hsl(226, 51%, 48%);
+  --color-magenta: hsl(274, 40%, 42%);
+  --color-cyan: hsl(203, 51%, 45%);
+  --color-white: hsl(30, 100%, 99.5%);
+
+  --color-default: var(--color-black);
+  --color-link: var(--color-green);
+  --color-current: var(--color-green);
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Monaspace Neon', 'Times New Roman', Times, serif;
+  color: var(--color-default);
+  background-color: var(--color-white);
+  line-height: 1.3;
+}
+
+* {
+  font-feature-settings: "calt" 1, "liga" 1;
+  font-variation-settings: "wght" var(--font-weight,400),"wdth" var(--font-width,100),"slnt" var(--font-slant,0);
+}
+
+h1, h2, h3 {
+  --font-weight: 600;
+}
+
+h1 {
+  margin-bottom: var(--space-sm);
+}
+
+h2 {
+  margin-top: var(--space-lg);
+}
+
+a {
+  color: var(--color-link);
+}
+
+main {
+
+    font-size: 14px;
+    max-width: 940px;
+    margin: var(--space-xl) auto;
+}
+
+.ContactInfo {
+  margin-top: 0;
+}
+
+.ProfessionalExperiance {
+  margin-bottom: var(--space-md);
+}
+
+.ProfessionalExperiance-Title {
+  display: flex;
+  align-items: top;
+
+  &[data-current-position] {
+    color: var(--color-current);
+  }
+
+  > h3 {
+    margin-top:0;
+  }
+
+  > span {
+    --font-slant: -11;
+    margin-left: 12px;
+    font-size: 14px;
+  }
+}
+
+.ProfessionalExperiance-JobRoles {
+  display: flex;
+  > li {
+    font-size: 14px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--space-xs) var(--space-md);
+    position: relative;
+    margin-left: -6px;
+    clip-path: polygon(calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100.00%, 0% 100%, 8px 50.00%, 0% 0%);
+  }
+
+  > li:first-child {
+    clip-path: polygon(calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100.00%, 0% 100%, 0% 0%);
+    margin-left: 0;
+  }
+
+  > li[data-current-position] {
+    background-color: var(--color-current);
+  }
+}
+
+@media (max-width: 830px) {
+  .ProfessionalExperiance-JobRoles {
+    > li {
+      display: none;
+    }
+
+    > li:first-child, > li:last-child {
+      display: block;
+    }
+
+  }
+}
+
+@media (max-width: 370px) {
+  .ProfessionalExperiance-JobRoles {
+    > li, > li:first-child {
+      display: none;
+    }
+
+    > li:last-child {
+      display: block;
+      clip-path: polygon(calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100.00%, 0% 100%, 0% 0%);
+      margin-left: 0;
+    }
+  }
+}
+
+.ProfessionalExperiance-Tools {
+  display: flex;
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+  line-height: 1.2em;
+
+  > li {
+    font-size: 14px;
+    background-color: var(--color-blue);
+    padding: 0 8px;
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    margin-right: 0.5em;
+  }
+}
+
+.HobbiesAndInterests {
+  display: flex;
+  flex-wrap: wrap;
+
+  > li {
+    font-size: 14px;
+    background-color: var(--color-yellow);
+    padding: 0 8px;
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    margin-right: 0.5em;
+  }
+}
+
+.u-unstyledList {
+  list-style: none;
+  padding-left: 0;
+}
+
