@@ -68,7 +68,6 @@ a {
 }
 
 main {
-
     font-size: 14px;
     max-width: 940px;
     margin: var(--space-lg) auto;
@@ -101,7 +100,6 @@ main {
 .ProfessionalExperiance-Title {
   display: flex;
   align-items: center;
-  margin-top: 2em;
   margin-bottom: 0.75em;
   flex-wrap: wrap;
   grid-gap: 8px;
@@ -205,3 +203,12 @@ main {
   padding-left: 0;
 }
 
+@media print {
+  main {
+    margin: 0;
+  }
+
+  .ProfessionalExperiance {
+    margin-bottom: var(--space-xs);
+  }
+}
