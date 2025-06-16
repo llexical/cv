@@ -71,7 +71,7 @@ main {
 
     font-size: 14px;
     max-width: 940px;
-    margin: var(--space-xl) auto;
+    margin: var(--space-lg) auto;
 }
 
 .ContactInfo {
@@ -80,23 +80,43 @@ main {
 
 .ProfessionalExperiance {
   margin-bottom: var(--space-md);
+  position: relative;
+  padding-left: var(--space-md);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    inset-block: 9px;
+    width: var(--space-sm);
+    border-radius: var(--space-xs) 0 0 var(--space-xs);
+    border: 1px solid var(--color-black);
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: var(--color-black);
+    border-right: 0;
+  }
 }
 
 .ProfessionalExperiance-Title {
   display: flex;
-  align-items: top;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  flex-wrap: wrap;
+  grid-gap: 8px;
 
   &[data-current-position] {
     color: var(--color-current);
   }
 
   > h3 {
-    margin-top:0;
+    font-size: 20px;
+    margin: 0;
   }
 
   > span {
     --font-slant: -11;
-    margin-left: 12px;
     font-size: 14px;
   }
 }
@@ -123,7 +143,7 @@ main {
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 880px) {
   .ProfessionalExperiance-JobRoles {
     > li {
       display: none;
@@ -136,7 +156,7 @@ main {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 385px) {
   .ProfessionalExperiance-JobRoles {
     > li, > li:first-child {
       display: none;
@@ -152,17 +172,17 @@ main {
 
 .ProfessionalExperiance-Tools {
   display: flex;
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
   flex-wrap: wrap;
   line-height: 1.2em;
+  gap: var(--space-xs);
 
   > li {
     font-size: 14px;
     background-color: var(--color-blue);
     padding: 0 8px;
     color: var(--color-white);
-    margin-bottom: var(--space-sm);
-    margin-right: 0.5em;
+    margin-bottom: var(--space-xs);
   }
 }
 
